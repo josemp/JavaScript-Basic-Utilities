@@ -15,9 +15,9 @@
  *          var myObject = {};
  *          setAssociativeValueToObjet(myObject,"client.name","John");
  *
- * @param[in,out]  {Object} dataObject	 	Initial Object (Not undefined and not null)
- * @param[in]  {string} asociativeName 	The associative name of an object property. Is a dotted string
- * @param[in]  {string} value 			Value assigned to object property
+ * @param[in,out]  {Object} dataObject	 	- Initial Object (Not undefined and not null)
+ * @param[in]      {string} asociativeName 	- The associative name of an object property. Is a dotted string
+ * @param[in]      {string} value 		- Value assigned to object property
  * @return {Object}                 The Object modified
  */
 function setAssociativeValueToObject (dataObject,asociativeName,value)
