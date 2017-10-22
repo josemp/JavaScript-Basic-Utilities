@@ -20,20 +20,21 @@
  * @param[in]      {string} value 		- Value assigned to object property
  * @return {Object}                 The Object modified
  */
-function setAssociativeValueToObject (dataObject,asociativeName,value)
+function setAassociativeValueToObject (dataObject,asociativeName,value)
 {
-  var dotSplit=asociativeName(".");		  	  	  
+  var dotSplit=asociativeName.split(".");		  	  	  
   var objPointer=dataObject; 
   for (i=0;i<dotSplit.length - 1;i++)
   {
 	if (objPointer[dotSplit[i]] === undefined)				     
-	 if ( Number(dotSplit[i] ))
-	   objPointer[dotSplit[i]] = [];
+	 if ( isNaN(dotSplit[i+1] ))
+	   objPointer[dotSplit[i]] = {};	   
 	 else    
-	   objPointer[dotSplit[i]] = {};						     
+        objPointer[dotSplit[i]] = [];
 		
-		 objPointer=objPointer[dotSplit[i]]; 
+	 objPointer=objPointer[dotSplit[i]]; 
   }
   objPointer[dotSplit[dotSplit.length-1]] = value;
   return dataObject;
 }
+
